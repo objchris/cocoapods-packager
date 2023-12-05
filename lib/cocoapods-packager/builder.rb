@@ -300,7 +300,7 @@ MAP
     end
 
     def ios_build_options
-      "ARCHS=\'#{ios_architectures.join(' ')}\' OTHER_CFLAGS=\'-Qunused-arguments\'"
+      "ARCHS=\'#{ios_architectures.join(' ')}\' OTHER_CFLAGS=\'-Qunused-arguments -fno-objc-msgsend-selector-stubs\'"
     end
 
     def ios_architectures
