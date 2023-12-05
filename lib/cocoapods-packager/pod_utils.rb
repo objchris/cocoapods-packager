@@ -159,7 +159,8 @@ module Pod
         file_accessors = create_file_accessors(static_target, dynamic_sandbox)
 
         archs = []
-        dynamic_target = Pod::PodTarget.new(dynamic_sandbox, true, static_target.user_build_configurations, archs, platform, static_target.specs, static_target.target_definitions, file_accessors)
+        build_type = Pod::BuildType.dynamic_framework()
+        dynamic_target = Pod::PodTarget.new(dynamic_sandbox, build_type, static_target.user_build_configurations, archs, platform, static_target.specs, static_target.target_definitions, file_accessors)
         dynamic_target
       end
 
